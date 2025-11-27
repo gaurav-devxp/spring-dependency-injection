@@ -1,19 +1,14 @@
 package guru.springframework.spring7di.controllers;
 
-import guru.springframework.spring7di.service.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class PropertyInjectorControllerTest {
-    PropertyInjectorController  propertyInjectorController;
 
-    @BeforeEach
-    void setUp() {
-        propertyInjectorController = new PropertyInjectorController();
-        propertyInjectorController.greetingService = new GreetingServiceImpl();
-    }
+    @Autowired
+    PropertyInjectorController  propertyInjectorController;
 
     @Test
     void sayHello() {
