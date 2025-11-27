@@ -4,7 +4,7 @@ import guru.springframework.spring7di.service.GreetingService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("HI")
+@Profile({"HI", "default"})
 @Service("i18NService")
 public class HindiGreetingService implements GreetingService {
     @Override
