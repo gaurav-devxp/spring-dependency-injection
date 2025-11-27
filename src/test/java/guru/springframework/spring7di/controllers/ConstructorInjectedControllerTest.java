@@ -1,18 +1,14 @@
 package guru.springframework.spring7di.controllers;
 
-import guru.springframework.spring7di.service.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class ConstructorInjectedControllerTest {
-    ConstructorInjectedController constructorInjectedController;
 
-    @BeforeEach
-    void setUp() {
-        constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
-    }
+    @Autowired
+    ConstructorInjectedController constructorInjectedController;
 
     @Test
     void sayHello() {
